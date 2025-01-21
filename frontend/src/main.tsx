@@ -1,22 +1,20 @@
-// Importing dependencies
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router } from 'react-router-dom';
-import App from './App';
-import './index.css'; // Include global styles
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.tsx'
+import { ClerkProvider } from '@clerk/clerk-react'
 
-// Find the root element
-const container = document.getElementById('root');
-if (!container) {
-  throw new Error("Root element not found");
+// Import your Publishable Key
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY
+console.log("PUBLISHABLE_KEY:", PUBLISHABLE_KEY);
+if (!PUBLISHABLE_KEY) {
+  throw new Error("Missing Publishable Key")
 }
 
-// Render the application
-const root = ReactDOM.createRoot(container);
-root.render(
-  <React.StrictMode>
-    <Router>
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
       <App />
-    </Router>
-  </React.StrictMode>
-);
+    </ClerkProvider>
+  </StrictMode>,
+)
