@@ -18,8 +18,7 @@ function App() {
         <UserButton />
       </SignedIn>
     </header>
-
   )
 }
- 
+
 export default App
