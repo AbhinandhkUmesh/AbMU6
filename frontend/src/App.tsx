@@ -15,7 +15,7 @@ function App() {
         </SignInButton>
       </SignedOut>
       <SignedIn>
-        <UserButton />
+        <UserButton/>
       </SignedIn>
     </header>
   )
