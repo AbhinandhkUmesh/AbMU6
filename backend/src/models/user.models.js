@@ -14,5 +14,6 @@ const userSchema = new mongoose.Schema({
         required:true,
         unique:true
     }
-},{timestamps:true})
-//createdAt ,updatedAt
+},{timestamps:true}) //createdAt ,updatedAt
+
+export const User = mongoose.model("User",userSchema)
