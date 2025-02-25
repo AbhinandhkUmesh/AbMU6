@@ -1,5 +1,8 @@
 
 
-export const getAdmin = (req, res) => {
+const getAdmin = (req, res) => {
     res.send("Hello Admin")
 }
+
+
+export { getAdmin }
