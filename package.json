@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@clerk/clerk-react": "^5.22.3",
+    "cloudinary": "^2.5.1",
     "mongodb": "^6.13.0"
   }
 }
