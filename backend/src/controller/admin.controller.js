@@ -7,7 +7,7 @@ import {
 } from "../models/album.model.js";
 
 import cloudinary from "../lib/cloudinary.js";
-import { Admin } from "mongodb";
+
 
 // Helper function to upload file to Cloudinary
 const uploadToCloudinary = async (file) => {
