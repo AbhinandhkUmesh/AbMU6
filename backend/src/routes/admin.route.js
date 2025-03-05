@@ -7,7 +7,7 @@ const router = Router();
 router.use(protectRoute, requireAdmin);
 router.get('/check',checkAdmin)
 router.get('/songs',createSong);
-router.delete("/songs/:id" ,deleteSong);
+router.delete("/songs/:id",deleteSong);
 router.delete("/albums", createAlbum);
 router.delete("/albums/:id", deleteAlbum);
 
