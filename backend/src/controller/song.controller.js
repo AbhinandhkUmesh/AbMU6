@@ -3,7 +3,7 @@ import {
 } from '../models/song.model.js';
 
 
-export const getAllSongs = async (req, res) => {
+export const getAllSongs = async (req, res,next) => {
 
     try {
         const songs = await Song.find().sort({
@@ -15,7 +15,7 @@ export const getAllSongs = async (req, res) => {
     }
 }
 
-export const getFeatuedSongs = async (req, res) => {
+export const getFeatuedSongs = async (req, res,next) => {
     try {
         const songs = await Song.aggregate([{
                 $project: {
@@ -41,7 +41,7 @@ export const getFeatuedSongs = async (req, res) => {
     }
 }
 
-export const getMadeForYou = async (req, res) => {
+export const getMadeForYou = async (req, res,next) => {
     try {
         const songs = await Song.aggregate([{
                 $project: {
@@ -66,7 +66,7 @@ export const getMadeForYou = async (req, res) => {
     }
 }
 
-export const getTrending = async (req, res) => {
+export const getTrending = async (req, res,next) => {
     try {
         const songs = await Song.aggregate([{
                 $project: {

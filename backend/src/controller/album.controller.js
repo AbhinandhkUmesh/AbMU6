@@ -1,6 +1,6 @@
 import {Album} from "../models/album.model.js";
 
-export const getAllAlbums = async (req, res) => {
+export const getAllAlbums = async (req, res,next) => {
     try {
         const albums = await Album.find({}).populate("songs");
         res.staus(200).json(albums);
@@ -10,7 +10,7 @@ export const getAllAlbums = async (req, res) => {
     }
 }
 
-export const getAlbumById = async (req, res) => {
+export const getAlbumById = async (req, res,next) => {
     try {
         const {albumId} = req.params.albumId;
 
