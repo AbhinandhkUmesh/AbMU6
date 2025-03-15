@@ -3,7 +3,7 @@ import {User} from "../models/user.model.js"; //import user model
 
 const  authCallback = async (req, res,next) => {
     try {
-
+        console.log("Request body:", req.body);
         const {
             id,
             firstName,
